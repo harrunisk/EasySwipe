@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':easyswipelibrary'
 rootProject.name='EasySwipe'
