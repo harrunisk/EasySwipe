@@ -2,7 +2,6 @@ package nstudiosappdev.android.view.easyswipe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.easyswipe.R
 
 class MainActivity : AppCompatActivity() {
 

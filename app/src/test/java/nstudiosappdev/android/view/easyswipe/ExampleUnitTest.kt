@@ -1,4 +1,4 @@
-package com.example.easyswipe
+package nstudiosappdev.android.view.easyswipe
 
 import org.junit.Test
 
