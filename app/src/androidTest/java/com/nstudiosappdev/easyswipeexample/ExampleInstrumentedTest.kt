@@ -1,4 +1,4 @@
-package nstudiosappdev.android.view.easyswipe
+package com.nstudiosappdev.easyswipeexample
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
