@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/space_m"
     app:layout_constraintBottom_toBottomOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,7 +34,7 @@
             android:layout_centerVertical="true"
             android:max="100"
             android:paddingEnd="@dimen/space_m"
-            android:paddingStart="0dp"
+            android:paddingStart="@dimen/space_m"
             android:progress="50"
             android:progressDrawable="@drawable/ic_transparent_pin"
             android:thumb="@drawable/ic_pin_button"
@@ -58,7 +58,10 @@
             android:textAllCaps="true"
             android:textStyle="bold"
             android:textSize="@dimen/font_xlarge"
-            android:layout_toEndOf="@id/iv_tick_reject" />
+            android:text="@string/content_description_reject"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_toEndOf="@id/iv_tick_reject"
+            android:textColor="@color/colorWhite"/>
 
         <ImageView
             android:id="@+id/iv_tick_accept"
@@ -79,7 +82,10 @@
             android:textSize="@dimen/font_xlarge"
             android:layout_toStartOf="@+id/iv_tick_accept"
             android:textAllCaps="true"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/content_description_accept"
+            android:textColor="@color/colorWhite"/>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
