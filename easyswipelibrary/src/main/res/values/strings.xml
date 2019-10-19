@@ -2,4 +2,6 @@
     <string name="app_name">easyswipelibrary</string>
     <string name="content_description_reject">Reject</string>
     <string name="content_description_accept">Accept</string>
+    <string name="text_accept">Accept</string>
+    <string name="text_reject">Reject</string>
 </resources>
