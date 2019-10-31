@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasySwipe">
+        <attr name="acceptStartColor" format="color" />
+        <attr name="acceptCenterColor" format="color" />
+        <attr name="acceptEndColor" format="color" />
+        <attr name="rejectStartColor" format="color" />
+        <attr name="rejectCenterColor" format="color" />
+        <attr name="rejectEndColor" format="color"/>
+        <attr name="acceptText" format="string"/>
+        <attr name="rejectText" format="string"/>
+    </declare-styleable>
+</resources>

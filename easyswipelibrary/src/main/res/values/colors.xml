@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorDefaultAcceptCenter">#00EBFF</color>
+    <color name="colorDefaultAcceptEnd">#00FF94</color>
+    <color name="colorDefaultAcceptStart">#00FF14</color>
+    <color name="colorDefaultRejectCenter">#FF00EB</color>
+    <color name="colorDefaultRejectEnd">#9300FF</color>
+    <color name="colorDefaultRejectStart">#FF006C</color>
 </resources>
