@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.view_easy_swipe.view.*
 import kotlin.math.absoluteValue
 import nstudiosappdev.android.view.easyswipe.R
 
-
 class EasySwipe : ConstraintLayout {
 
     /**
