@@ -7,18 +7,36 @@ import android.view.LayoutInflater
 import android.widget.SeekBar
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.view_easy_swipe.view.*
-import nstudiosappdev.android.view.easyswipe.R
 import kotlin.math.absoluteValue
+import nstudiosappdev.android.view.easyswipe.R
 
-class EasySwipe(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
+class EasySwipe : ConstraintLayout {
 
-    init {
+    /**
+     * Settings
+     */
+    internal lateinit var settings: EasySwipeSettings
+
+    constructor(context: Context) : super(context) {
+        init(context, null)
+    }
+
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        init(context, attrs)
+    }
+
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+        init(context, attrs)
+    }
+
+    private fun init(context: Context, attrs: AttributeSet?) {
+        settings = EasySwipeSettings(context, attrs!!)
+
         val view = LayoutInflater.from(context).inflate(
             R.layout.view_easy_swipe,
             this,
             true
         )
-        view.invalidate()
 
         seekbar_main.isClickable = false
         seekbar_pin.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
