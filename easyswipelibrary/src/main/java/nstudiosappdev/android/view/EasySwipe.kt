@@ -2,6 +2,8 @@ package nstudiosappdev.android.view
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.SeekBar
@@ -30,13 +32,14 @@ class EasySwipe : ConstraintLayout {
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
-        settings = EasySwipeSettings(context, attrs!!)
 
         val view = LayoutInflater.from(context).inflate(
             R.layout.view_easy_swipe,
             this,
             true
         )
+
+        settings = EasySwipeSettings(context, attrs!!, view)
 
         seekbar_main.isClickable = false
         seekbar_pin.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {

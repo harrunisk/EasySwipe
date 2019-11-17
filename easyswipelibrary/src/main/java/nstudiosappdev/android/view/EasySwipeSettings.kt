@@ -3,9 +3,19 @@ package nstudiosappdev.android.view
 import android.content.Context
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
+import android.graphics.drawable.GradientDrawable
+import android.view.View
+import android.widget.SeekBar
+import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.Drawable
 import nstudiosappdev.android.view.easyswipe.R
 
-class EasySwipeSettings(context: Context, attributeSet: AttributeSet) {
+
+class EasySwipeSettings(
+    context: Context,
+    attributeSet: AttributeSet,
+    view: View
+) {
 
     private var acceptStartColor: Int? = null
     private var acceptCenterColor: Int? = null
@@ -48,6 +58,41 @@ class EasySwipeSettings(context: Context, attributeSet: AttributeSet) {
                 R.styleable.EasySwipe_rejectEndColor,
                 ContextCompat.getColor(context, R.color.colorDefaultRejectEnd)
             )
+
+
+        val positiveDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(
+                acceptStartColor!!,
+                acceptCenterColor!!,
+                acceptEndColor!!
+            )
+        )
+        positiveDrawable.shape = GradientDrawable.RECTANGLE
+        positiveDrawable.setStroke(0,0)
+        positiveDrawable.setSize(0, 150)
+        positiveDrawable.cornerRadius = 30f
+
+        val negativeDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(
+                rejectStartColor!!,
+                rejectCenterColor!!,
+                rejectEndColor!!
+            )
+        )
+        negativeDrawable.shape = GradientDrawable.RECTANGLE
+        negativeDrawable.setStroke(0, 0)
+        negativeDrawable.setSize(0, 150)
+        negativeDrawable.cornerRadius = 30f
+
+
+        val layers = arrayOf<Drawable>(positiveDrawable, negativeDrawable)
+        val layerDrawable = LayerDrawable(layers)
+
+
+        view.findViewById<SeekBar>(R.id.seekbar_main).progressDrawable = layerDrawable
+
 
         typedArray.recycle()
     }
