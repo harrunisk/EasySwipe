@@ -15,7 +15,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:acceptStartColor="@color/colorDefaultAcceptStart"
+        app:acceptCenterColor="@color/colorDefaultAcceptCenter"
+        app:acceptEndColor="@color/colorDefaultAcceptEnd"
+        app:rejectStartColor="@color/colorDefaultRejectStart"
+        app:rejectCenterColor="@color/colorDefaultRejectCenter"
+        app:rejectEndColor="@color/colorDefaultRejectEnd">
     </nstudiosappdev.android.view.EasySwipe>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
