@@ -7,7 +7,8 @@ import android.graphics.drawable.GradientDrawable
 import android.view.View
 import android.widget.SeekBar
 import android.graphics.drawable.LayerDrawable
-import android.graphics.drawable.Drawable
+import android.graphics.drawable.ScaleDrawable
+import android.view.Gravity
 import nstudiosappdev.android.view.easyswipe.R
 
 
@@ -59,9 +60,22 @@ class EasySwipeSettings(
                 ContextCompat.getColor(context, R.color.colorDefaultRejectEnd)
             )
 
+        val positiveDrawable = createPositiveDrawable()
+        val negativeScaleDrawable = createNegativeShapeDrawable()
 
+        val layers = arrayOf(positiveDrawable, negativeScaleDrawable)
+        val layerDrawable = LayerDrawable(layers)
+
+        val seekBarMain = view.findViewById<SeekBar>(R.id.seekbar_main)
+        seekBarMain.progressDrawable = layerDrawable
+        seekBarMain.progress = 51
+
+        typedArray.recycle()
+    }
+
+    private fun createPositiveDrawable(): GradientDrawable {
         val positiveDrawable = GradientDrawable(
-            GradientDrawable.Orientation.TOP_BOTTOM,
+            GradientDrawable.Orientation.RIGHT_LEFT,
             intArrayOf(
                 acceptStartColor!!,
                 acceptCenterColor!!,
@@ -70,11 +84,15 @@ class EasySwipeSettings(
         )
         positiveDrawable.shape = GradientDrawable.RECTANGLE
         positiveDrawable.setStroke(0,0)
-        positiveDrawable.setSize(0, 150)
+        positiveDrawable.setSize(1, -1)
         positiveDrawable.cornerRadius = 30f
 
+        return positiveDrawable
+    }
+
+    private fun createNegativeShapeDrawable(): ScaleDrawable {
         val negativeDrawable = GradientDrawable(
-            GradientDrawable.Orientation.TOP_BOTTOM,
+            GradientDrawable.Orientation.LEFT_RIGHT,
             intArrayOf(
                 rejectStartColor!!,
                 rejectCenterColor!!,
@@ -86,14 +104,11 @@ class EasySwipeSettings(
         negativeDrawable.setSize(0, 150)
         negativeDrawable.cornerRadius = 30f
 
-
-        val layers = arrayOf<Drawable>(positiveDrawable, negativeDrawable)
-        val layerDrawable = LayerDrawable(layers)
-
-
-        view.findViewById<SeekBar>(R.id.seekbar_main).progressDrawable = layerDrawable
-
-
-        typedArray.recycle()
+        return ScaleDrawable(
+            negativeDrawable,
+            Gravity.START,
+            1f,
+            -1f
+        )
     }
 }
