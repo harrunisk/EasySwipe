@@ -9,5 +9,6 @@
         <attr name="rejectEndColor" format="color"/>
         <attr name="acceptText" format="string"/>
         <attr name="rejectText" format="string"/>
+        <attr name="cornerRadius" format="float"/>
     </declare-styleable>
 </resources>

@@ -26,6 +26,11 @@ class EasySwipeSettings(
     private var rejectCenterColor: Int? = null
     private var rejectEndColor: Int? = null
 
+    private var cornerRadius: Float? = DEFAULT_RADIUS
+
+    private var rejectText: String? = "REJECT"
+    private var acceptText: String? = "ACCEPT"
+
     init {
         val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.EasySwipe)
 
@@ -60,6 +65,12 @@ class EasySwipeSettings(
                 ContextCompat.getColor(context, R.color.colorDefaultRejectEnd)
             )
 
+        acceptText =
+            typedArray.getString(
+                R.styleable.EasySwipe_acceptText,
+                DEFAULT_ACCEPT_TEXT
+            )
+
         val positiveDrawable = createPositiveDrawable()
         val negativeScaleDrawable = createNegativeShapeDrawable()
 
@@ -68,7 +79,7 @@ class EasySwipeSettings(
 
         val seekBarMain = view.findViewById<SeekBar>(R.id.seekbar_main)
         seekBarMain.progressDrawable = layerDrawable
-        seekBarMain.progress = 51
+        seekBarMain.progress = DEFAULT_PROGRESS
 
         typedArray.recycle()
     }
@@ -83,9 +94,7 @@ class EasySwipeSettings(
             )
         )
         positiveDrawable.shape = GradientDrawable.RECTANGLE
-        positiveDrawable.setStroke(0,0)
-        positiveDrawable.setSize(1, -1)
-        positiveDrawable.cornerRadius = 30f
+        positiveDrawable.cornerRadius = DEFAULT_RADIUS
 
         return positiveDrawable
     }
@@ -100,15 +109,23 @@ class EasySwipeSettings(
             )
         )
         negativeDrawable.shape = GradientDrawable.RECTANGLE
-        negativeDrawable.setStroke(0, 0)
-        negativeDrawable.setSize(0, 150)
-        negativeDrawable.cornerRadius = 30f
+        negativeDrawable.setSize(0, DEFAULT_HEIGHT)
+        negativeDrawable.cornerRadius = cornerRadius!!
 
         return ScaleDrawable(
             negativeDrawable,
             Gravity.START,
-            1f,
-            -1f
+            SCALE_MAX,
+            NOT_SCALE
         )
+    }
+    companion object {
+        private const val DEFAULT_PROGRESS = 51
+        private const val DEFAULT_RADIUS = 30f
+        private const val DEFAULT_HEIGHT = 150
+        private const val NOT_SCALE = -1f
+        private const val SCALE_MAX = 1f
+        private const val DEFAULT_ACCEPT_TEXT = "ACCEPT"
+        private const val DEFAULT_REJECT_TEXT = "REJECT"
     }
 }
