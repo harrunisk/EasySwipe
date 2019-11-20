@@ -7,4 +7,6 @@
     <color name="colorDefaultRejectCenter">#FF00EB</color>
     <color name="colorDefaultRejectEnd">#9300FF</color>
     <color name="colorDefaultRejectStart">#FF006C</color>
+    <color name="colorDefaultAcceptText">#ffffff</color>
+    <color name="colorDefaultRejectText">#ffffff</color>
 </resources>
