@@ -3,45 +3,40 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/space_m"
     app:layout_constraintBottom_toBottomOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-        android:id="@+id/rl_seekbar"
+        android:id="@+id/relativeLayoutSeekBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true">
 
         <SeekBar
-            android:id="@+id/seekbar_main"
+            android:id="@+id/seekBarMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:max="100"
             android:progress="50"
-            android:paddingLeft="@dimen/space_m"
-            android:paddingRight="@dimen/space_m"
             android:progressDrawable="@drawable/custom_seek_bar"
             android:thumb="@null"
             android:visibility="visible"/>
 
         <SeekBar
-            android:id="@+id/seekbar_pin"
+            android:id="@+id/seekBarPin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:max="100"
-            android:paddingEnd="@dimen/space_m"
-            android:paddingStart="@dimen/space_m"
             android:progress="50"
             android:progressDrawable="@drawable/ic_transparent_pin"
             android:thumb="@drawable/ic_pin_button"
             android:visibility="visible"/>
 
         <ImageView
-            android:id="@+id/iv_tick_reject"
+            android:id="@+id/imageViewTickReject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -50,7 +45,7 @@
             android:contentDescription="@string/content_description_reject"/>
 
         <TextView
-            android:id="@+id/tv_reject"
+            android:id="@+id/textViewReject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -60,32 +55,30 @@
             android:textSize="@dimen/font_xlarge"
             android:text="@string/content_description_reject"
             android:fontFamily="@font/roboto_bold"
-            android:layout_toEndOf="@id/iv_tick_reject"
-            android:textColor="@color/colorWhite"/>
+            android:layout_toEndOf="@id/imageViewTickReject"/>
 
         <ImageView
-            android:id="@+id/iv_tick_accept"
+            android:id="@+id/imageViewTickAccept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="@dimen/space_l"
             android:src="@drawable/ic_check"
             android:contentDescription="@string/content_description_accept"/>
 
         <TextView
-            android:id="@+id/tv_accept"
+            android:id="@+id/textViewAccept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/font_medium"
             android:textSize="@dimen/font_xlarge"
-            android:layout_toStartOf="@+id/iv_tick_accept"
+            android:layout_toStartOf="@+id/imageViewTickAccept"
             android:textAllCaps="true"
             android:textStyle="bold"
             android:fontFamily="@font/roboto_bold"
-            android:text="@string/content_description_accept"
-            android:textColor="@color/colorWhite"/>
+            android:text="@string/content_description_accept"/>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
