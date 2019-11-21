@@ -5,20 +5,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/colorBackground"
     tools:context="com.nstudiosappdev.easyswipeexample.MainActivity">
 
     <nstudiosappdev.android.view.EasySwipe
         android:id="@+id/easySwipe"
-        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cornerRadius="90dp"
-        app:thumb="@drawable/ic_pin_button">
+        android:layout_marginTop="@dimen/space_xxxxl">
+    </nstudiosappdev.android.view.EasySwipe>
+
+    <nstudiosappdev.android.view.EasySwipe
+        android:id="@+id/easySwipe2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/easySwipe"
+        app:acceptStartColor="@color/colorDefaultAccept"
+        app:acceptCenterColor="@color/colorDefaultAccept"
+        app:acceptEndColor="@color/colorDefaultAccept"
+        app:rejectStartColor="@color/colorDefaultReject"
+        app:rejectCenterColor="@color/colorDefaultReject"
+        app:rejectEndColor="@color/colorDefaultReject"
+        app:cornerRadius="50dp">
+    </nstudiosappdev.android.view.EasySwipe>
+
+    <nstudiosappdev.android.view.EasySwipe
+        android:id="@+id/easySwipe3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/easySwipe2"
+        app:acceptStartColor="@color/colorDefaultAcceptEnd"
+        app:acceptCenterColor="@color/colorDefaultAcceptEnd"
+        app:acceptEndColor="@color/colorDefaultAcceptEnd"
+        app:rejectStartColor="@color/colorDefaultRejectEnd"
+        app:rejectCenterColor="@color/colorDefaultRejectEnd"
+        app:rejectEndColor="@color/colorDefaultRejectEnd">
+    </nstudiosappdev.android.view.EasySwipe>
+
+    <nstudiosappdev.android.view.EasySwipe
+        android:id="@+id/easySwipe4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/easySwipe3"
+        app:acceptStartColor="@color/colorDefaultAcceptEnd"
+        app:acceptCenterColor="@color/colorDefaultAcceptEnd"
+        app:acceptEndColor="@color/colorDefaultAcceptEnd"
+        app:rejectStartColor="@color/colorDefaultRejectEnd"
+        app:rejectCenterColor="@color/colorDefaultRejectEnd"
+        app:rejectEndColor="@color/colorDefaultRejectEnd"
+        app:cornerRadius="90dp">
     </nstudiosappdev.android.view.EasySwipe>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
