@@ -19,25 +19,46 @@ class EasySwipeSettings(
     view: View
 ) {
 
+    /**
+     * Accept side colors
+     */
     private var acceptStartColor: Int? = null
     private var acceptCenterColor: Int? = null
     private var acceptEndColor: Int? = null
 
+    /**
+     * Reject side colors
+     */
     private var rejectStartColor: Int? = null
     private var rejectCenterColor: Int? = null
     private var rejectEndColor: Int? = null
 
-    private var acceptText: String? = "ACCEPT"
-    private var rejectText: String? = "REJECT"
+    /**
+     * Animation texts
+     */
+    private var acceptText: String? = null
+    private var rejectText: String? = null
 
+    /**
+     * Animation text colors
+     */
     private var acceptTextColor: Int? = null
     private var rejectTextColor: Int? = null
 
+    /**
+     * Animation text sizes
+     */
     private var acceptTextSize: Float? = null
     private var rejectTextSize: Float? = null
 
+    /**
+     * Animation corner radius
+     */
     private var cornerRadius: Float? = null
 
+    /**
+     * Animation pin drawable
+     */
     private var thumb: Int? = null
 
     init {
@@ -132,6 +153,9 @@ class EasySwipeSettings(
 
     }
 
+    /**
+     * Create accept side drawable
+     */
     private fun createPositiveDrawable(): GradientDrawable {
         val positiveDrawable = GradientDrawable(
             GradientDrawable.Orientation.RIGHT_LEFT,
@@ -147,6 +171,9 @@ class EasySwipeSettings(
         return positiveDrawable
     }
 
+    /**
+     * Create reject side and main drawable
+     */
     private fun createNegativeShapeDrawable(): ScaleDrawable {
         val negativeDrawable = GradientDrawable(
             GradientDrawable.Orientation.LEFT_RIGHT,
@@ -168,6 +195,11 @@ class EasySwipeSettings(
         )
     }
 
+    /**
+     * Put texts
+     *
+     * @param view
+     */
     private fun arrangeTexts(view: View) {
 
         val textViewAccept = view.findViewById<TextView>(R.id.textViewAccept)
@@ -186,6 +218,11 @@ class EasySwipeSettings(
         textViewReject.textSize = rejectTextSize!!
     }
 
+    /**
+     * Merge drawables
+     *
+     * @param view
+     */
     private fun createProgressDrawable(view: View) {
 
         val positiveDrawable = createPositiveDrawable()
@@ -199,11 +236,22 @@ class EasySwipeSettings(
         seekBarMain.progress = DEFAULT_PROGRESS
     }
 
+    /**
+     * Main progress bar settings
+     *
+     * @param view
+     */
     private fun arrangeMainProgress(view: View) {
         val seekBarMain = view.findViewById<SeekBar>(R.id.seekBarMain)
         seekBarMain.isClickable = false
     }
 
+    /**
+     * Pin button settings
+     *
+     * @param view
+     * @param context
+     */
     private fun createThumb(view: View, context: Context) {
         val seekBarPin = view.findViewById<SeekBar>(R.id.seekBarPin)
         seekBarPin.thumb = context.getDrawable(thumb!!)
