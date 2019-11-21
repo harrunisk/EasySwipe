@@ -9,4 +9,6 @@
     <color name="colorDefaultRejectStart">#FF006C</color>
     <color name="colorDefaultAcceptText">#ffffff</color>
     <color name="colorDefaultRejectText">#ffffff</color>
+    <color name="colorDefaultAccept">#00FF14</color>
+    <color name="colorDefaultReject">#FF006C</color>
 </resources>
