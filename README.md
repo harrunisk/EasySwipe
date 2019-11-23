@@ -7,21 +7,7 @@ Android EasySwipe Library
 <img src="https://github.com/harrunisk/EasySwipe/blob/master/art/EasySwipe.gif" >
 </p>
 
-#### Setup
-1. Add the JitPack repository to your root build.gradle at the end of repositories:
-```
-allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
-}
-```
-2. Add the LiquidSwipe dependency in the build.gradle:
-```
-implementation 'com.github.'
-```
-#### Usage
+## Usage
 Normal Usage
 ```
     <nstudiosappdev.android.view.EasySwipe
@@ -64,7 +50,20 @@ Don't forget to set listeners.
             }
         })
 ```
-
+## Setup
+1. Add the JitPack repository to your root build.gradle at the end of repositories:
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+2. Add the EasySwipe dependency in the build.gradle:
+```
+implementation 'com.github.'
+```
 ### License
 ```
 MIT License
