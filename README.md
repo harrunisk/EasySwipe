@@ -69,7 +69,7 @@ allprojects {
 ```
 2. Add the EasySwipe dependency in the build.gradle:
 ```
-implementation 'com.github.'
+implementation 'com.github.harrunisk:EasySwipe:0.1.0'
 ```
 ### License
 ```
