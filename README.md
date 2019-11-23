@@ -8,7 +8,7 @@ Android EasySwipe Library
 </p>
 
 ## Usage
-Normal Usage
+Simple Usage
 ```
     <nstudiosappdev.android.view.EasySwipe
         android:id="@+id/easySwipe"
@@ -28,11 +28,11 @@ Custom Usage
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/easySwipe3"
-        app:acceptStartColor="@color/colorDefaultAcceptEnd"
-        app:acceptCenterColor="@color/colorDefaultAcceptEnd"
+        app:acceptStartColor="@color/colorDefaultAcceptStart"
+        app:acceptCenterColor="@color/colorDefaultAcceptCenter"
         app:acceptEndColor="@color/colorDefaultAcceptEnd"
-        app:rejectStartColor="@color/colorDefaultRejectEnd"
-        app:rejectCenterColor="@color/colorDefaultRejectEnd"
+        app:rejectStartColor="@color/colorDefaultRejectStart"
+        app:rejectCenterColor="@color/colorDefaultRejectCenter"
         app:rejectEndColor="@color/colorDefaultRejectEnd"
         app:cornerRadius="90dp"
         app:thumb="@drawable/ic_pin_button">
