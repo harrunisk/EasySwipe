@@ -7,8 +7,9 @@ Android EasySwipe Library
 <img src="https://github.com/harrunisk/EasySwipe/blob/master/art/EasySwipe.gif" >
 </p>
 
-## Usage
-Simple Usage
+## Usage  
+Constraint layout was used in examples. Any layout can be used.  
+#### Simple Usage
 ```
     <nstudiosappdev.android.view.EasySwipe
         android:id="@+id/easySwipe"
@@ -19,7 +20,7 @@ Simple Usage
         app:layout_constraintTop_toTopOf="parent"
     </nstudiosappdev.android.view.EasySwipe>
 ```
-Custom Usage
+#### Custom Usage
 ```
     <nstudiosappdev.android.view.EasySwipe
         android:id="@+id/easySwipeCustom"
